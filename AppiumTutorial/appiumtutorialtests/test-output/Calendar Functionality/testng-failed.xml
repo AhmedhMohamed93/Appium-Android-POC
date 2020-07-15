@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Calendar Functionality]">
+  <test thread-count="5" name="Test1(failed)">
+    <classes>
+      <class name="com.sample.tests.CalendarTests">
+        <methods>
+          <include name="testCountOfEvents"/>
+        </methods>
+      </class> <!-- com.sample.tests.CalendarTests -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Calendar Functionality] -->

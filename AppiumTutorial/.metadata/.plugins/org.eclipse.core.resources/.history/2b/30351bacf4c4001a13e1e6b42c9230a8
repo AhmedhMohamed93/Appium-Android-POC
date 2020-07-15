@@ -1,0 +1,38 @@
+import org.testng.annotations.Test;
+
+import com.sample.pages.LoginPage;
+
+public class LoginTests 
+{
+
+	LoginPage loginPage = new LoginPage();
+    @Test
+    public void testLogin()
+    {
+        
+        if(loginPage.validateLoginpage() == true)
+        {
+            System.out.println("pass");
+        }
+        else
+        {
+            System.out.println("Validation failed");
+        }
+
+    }
+    
+    @Test
+    public void testCalFun()
+    {
+    	if (loginPage.validatecalcFunctionality() == "20")
+    	{
+    		System.out.println("pass");
+    	}
+    	else
+    	{
+    		System.out.println("Validation failed");
+    	}
+    	
+    	
+    }
+}

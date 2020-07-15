@@ -1,0 +1,19 @@
+package com.sample.tests;
+
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.Test;
+import com.sample.pages.CalendarPage;
+
+
+public class LoginTests 
+{
+    
+    @Test
+    public void testCalFun() 
+    {
+    	CalendarPage calculatorobj = new CalendarPage();
+    	assertEquals(calculatorobj.validatecalcFunctionality(), "TestAutomationwithAppium");
+    	   	
+    }
+}

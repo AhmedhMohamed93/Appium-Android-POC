@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Calendar Functionality">
+  <test name="Test1">
+        <classes>
+			<class name="/appiumtutorialtests/src/test/java/com/sample/tests/CalendarTests.java">
+				<methods>
+					<include name="testCalFun"/>
+					<include name="testCalRemainder"/>
+					<include name="testCountOfEvents"/>
+				</methods>
+			</class>	 		
+	</classes>
+    </test>
+</suite> 

@@ -1,0 +1,6 @@
+package com.sample.constants;
+
+public class Constants 
+{
+	public String EventName = "TestAutomationwithAppium";
+}

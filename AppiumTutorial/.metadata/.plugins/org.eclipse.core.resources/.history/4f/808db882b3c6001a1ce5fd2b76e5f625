@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+  <!-- Set browser parameter (ie = internet explorer, chrome = Google chrome -->
+  <parameter name="browser" value="chrome" />
+  <parameter name="ProjectName" value="Project3333" />
+  <test thread-count="5" name="Test1">
+	<classes>
+			<class name="test.ValidateLoginAndLaunch">
+				<methods>
+					<include name="BD_ValidateLaunchWebsite"/>
+					<include name="BD_LoginSuccessfully"/>
+				</methods>
+			</class>
+	 
+			<class name="test.ValidateCreateNewIDN">
+				<methods>
+					<include name="BD_ValidateCreationOfNewHealthSystem"/>
+				</methods>
+			</class> 
+	
+			<class name="test.ValidateCreateNewfacility">
+				<methods>
+					<include name="BD_ValidateCreationOfNewFacility"/>
+				</methods>
+			</class>
+
+			<class name="test.ValidateCreateNewPF">
+				<methods>
+					<include name="BD_ValidateCreationOfNewPharmacyFormualry"/>
+				</methods>
+			</class>
+
+			<class name="test.ValidateCreateAlignmentProject">
+				<methods>
+					<include name="BD_ValidateCreationOfNewAlignmentProject"/>
+				</methods>
+			</class>	
+			
+			<class name="test.ValidateCreationOfAlignmentProjectDB">
+				<methods>
+					<include name="BD_ValidateCreationOfNewAlignmentProjectDB"/>
+				</methods>
+			</class>		
+		
+	</classes>
+  </test>
+</suite> 

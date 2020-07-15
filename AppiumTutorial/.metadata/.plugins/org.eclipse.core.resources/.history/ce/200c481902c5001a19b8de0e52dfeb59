@@ -1,0 +1,25 @@
+package com.sample.tests;
+
+import org.testng.annotations.Test;
+
+import com.sample.pages.LoginPage;
+
+public class LoginTests 
+{
+    
+    @Test
+    public void testCalFun() throws Exception
+    {
+    	LoginPage loginPage = new LoginPage();
+    	if (loginPage.validatecalcFunctionality() == "20")
+    	{
+    		System.out.println("pass");
+    	}
+    	else
+    	{
+    		System.out.println("Validation failed");
+    	}
+    	
+    	
+    }
+}

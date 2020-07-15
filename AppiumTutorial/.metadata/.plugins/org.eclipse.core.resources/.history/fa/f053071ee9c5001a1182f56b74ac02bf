@@ -1,0 +1,163 @@
+package com.sample.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.sample.core.Driver;
+
+public class CalendarPage extends Driver
+{
+    
+
+	/**********************************************************************************************************
+	 * 																										  *
+	 *                                  				 Variables										      *
+	 * 																										  *
+	 **********************************************************************************************************/
+	
+	PageObjects CalendarPageObj;
+	
+	/**********************************************************************************************************
+	 * 																										  *
+	 *                                  			 Constructor										      *
+	 * 																										  *
+	 **********************************************************************************************************/
+
+    public CalendarPage() 
+    {
+        super();
+        CalendarPageObj = new PageObjects();
+        PageFactory.initElements(driver, CalendarPageObj);
+    }
+    
+	/**********************************************************************************************************
+	 * 																										  *
+	 *                                  			   Methods    										      *
+	 * 																										  *
+	 **********************************************************************************************************/
+    
+    public String validatecalcFunctionality() 
+    {
+    	
+    	WebDriverWait wait   = new WebDriverWait(driver,30);
+    	WebDriverWait wait1  = new WebDriverWait(driver,30);
+    	WebDriverWait wait2  = new WebDriverWait(driver,30);
+    	WebDriverWait wait3  = new WebDriverWait(driver,30);
+    	WebDriverWait wait4  = new WebDriverWait(driver,30);
+        WebDriverWait wait41 = new WebDriverWait(driver,30);
+        WebDriverWait wait5  = new WebDriverWait(driver,30);
+        WebDriverWait wait6  = new WebDriverWait(driver,30);
+        WebDriverWait wait7  = new WebDriverWait(driver,30);
+        String EventName;
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.Menue));
+    	CalendarPageObj.Menue.click();
+        wait1.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EventBTN));
+    	CalendarPageObj.EventBTN.click();
+        wait2.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.CreateEvent));
+    	CalendarPageObj.CreateEvent.click();
+        wait3.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EventName));
+    	CalendarPageObj.EventName.sendKeys("TestAutomationwithAppium");
+    	CalendarPageObj.Date.click();
+    	
+        wait4.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.ParentPanel));
+    	
+        wait41.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EventDate));
+        CalendarPageObj.EventDate.click();
+        CalendarPageObj.SaveDateBTN.click();
+        
+        wait5.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EveneTime));     
+        CalendarPageObj.EveneTime.click();
+        wait6.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.TimeMod));
+        
+        CalendarPageObj.Hour.click();
+        CalendarPageObj.Minutes.click();
+        CalendarPageObj.SaveDateBTN.click();
+        CalendarPageObj.SaveEvent.click();
+        
+        wait7.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EventDetails));
+        
+        EventName = CalendarPageObj.EventDetailsName.getText();
+        return EventName;
+        
+        
+        
+        
+        
+    }
+
+    class PageObjects 
+    {
+    	
+		@CacheLookup
+        @FindBy(id = "com.droidfoundry.calendar:id/boom_menu_button")
+        public WebElement Menue;
+
+        @CacheLookup
+        @FindBy(xpath ="/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[5]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout")
+        public WebElement EventBTN;
+
+        @CacheLookup
+        @FindBy(xpath ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout")
+        public WebElement CreateEvent;
+
+        @CacheLookup
+        @FindBy(id = "com.droidfoundry.calendar:id/et_event_name")
+        public WebElement EventName;
+
+        @CacheLookup
+        @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.ImageView")
+        public WebElement Date;
+        
+        @CacheLookup
+        @FindBy(id = "android:id/parentPanel")
+        public WebElement ParentPanel;
+        
+        @CacheLookup
+        @FindBy(xpath = "//android.view.View[@content-desc=\"31 July 2020\"]")
+        public WebElement EventDate;
+        
+        @CacheLookup
+        @FindBy(id = "android:id/button1")
+        public WebElement SaveDateBTN;
+        
+        @CacheLookup
+        @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.ImageView")
+        public WebElement EveneTime;
+        
+        @CacheLookup
+        @FindBy(id = "android:id/timePicker")
+        public WebElement TimeMod;
+        
+        @CacheLookup
+        @FindBy(xpath = "//android.widget.RadialTimePickerView.RadialPickerTouchHelper[@content-desc=\"3\"]")
+        public WebElement Hour;
+        
+        @CacheLookup
+        @FindBy(xpath = "//android.widget.RadialTimePickerView.RadialPickerTouchHelper[@content-desc=\"30\"]")
+        public WebElement Minutes;
+      
+        @CacheLookup
+        @FindBy(id = "com.droidfoundry.calendar:id/action_save")
+        public WebElement SaveEvent;
+        
+        @CacheLookup
+        @FindBy(id = "com.droidfoundry.calendar:id/rec_list_events")
+        public WebElement EventDetails;
+        
+        @CacheLookup
+        @FindBy(id = "com.droidfoundry.calendar:id/tv_event_title")
+        public WebElement EventDetailsName;
+        
+
+        
+
+        
+    }
+    
+}

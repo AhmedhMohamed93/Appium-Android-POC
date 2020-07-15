@@ -1,0 +1,48 @@
+package com.sample.tests;
+
+import static org.testng.Assert.assertEquals;
+import org.testng.annotations.Test;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.sample.constants.Constants;
+import com.sample.core.BaseSetup;
+import com.sample.pages.CalendarPage;
+
+
+
+
+public class CalendarTests extends BaseSetup
+{
+    
+    @Test
+    public void testCalFun() 
+    {
+    	ExtentTest test = extent.createTest("TC#1","Verify that User is able to create an event");
+    	test.log(Status.INFO, "Test execution has been started");
+    			
+    	CalendarPage calculatorobj = new CalendarPage();
+    	Constants ConstObj = new Constants();
+    	assertEquals(calculatorobj.validatecalcFunctionality(), ConstObj.EventName); 
+    	test.log(Status.INFO, "Test execution has been completed");
+    }
+    
+    @Test
+    public void testCalRemainder() 
+    {
+    	ExtentTest test = extent.createTest("TC#1","Verify that the event details displayed correctly");
+    	test.log(Status.INFO, "Test execution has been started");
+    	CalendarPage calculatorobj = new CalendarPage();
+    	Constants ConstObj = new Constants();
+    	assertEquals(calculatorobj.remainder(), ConstObj.EventRemainder);  
+    	test.log(Status.INFO, "Test execution has been completed");
+    }
+    
+    
+    @Test
+    public void testCountOfEvents() 
+    {
+    	CalendarPage calculatorobj = new CalendarPage();
+    	Constants ConstObj = new Constants();
+    	assertEquals(calculatorobj.CountOfEvents(), ConstObj.CountofE);  	   	
+    }
+}

@@ -1,0 +1,91 @@
+package com.sample.core;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage extends Driver
+{
+
+    PageObjects loginPage;
+
+    String userName = "";
+    String passWord = "";
+
+    public LoginPage() 
+    {
+        super();
+        loginPage = new PageObjects();
+        PageFactory.initElements(driver, loginPage);
+    }
+
+    public boolean validateLoginpage()
+    {
+        boolean elements = false;
+        if(loginPage.elm1.isDisplayed())
+        {
+            if(loginPage.Mul.isDisplayed())
+            {
+                if(loginPage.elm2.isDisplayed())
+                {
+                    if(loginPage.equal.isDisplayed())
+                    {
+                    	if(loginPage.res.isDisplayed())
+                    	{
+                    		elements = true;
+                    	}                    	                        
+                    }
+                }
+            }
+        }
+        else
+        {
+            elements = false;
+        }
+        
+        return elements;
+
+    }
+    
+    public String validatecalcFunctionality()
+    {
+    	loginPage.elm1.click();
+    	loginPage.Mul.click();
+    	loginPage.elm2.click();
+    	loginPage.equal.click();
+		
+		String finalresult = loginPage.res.getText();
+		return finalresult;
+    }
+
+
+    }
+
+
+
+    class PageObjects 
+    {
+
+        @CacheLookup
+        @FindBy(id = "com.dencreak.dlcalculator:id/2131297056")
+        public WebElement elm1;
+
+        @CacheLookup
+        @FindBy(id = "com.dencreak.dlcalculator:id/2131297074")
+        public WebElement Mul;
+
+        @CacheLookup
+        @FindBy(id = "com.dencreak.dlcalculator:id/2131297055")
+        public WebElement elm2;
+
+        @CacheLookup
+        @FindBy(name = "com.dencreak.dlcalculator:id/2131297086")
+        public WebElement equal;
+
+        @CacheLookup
+        @FindBy(id = "com.dencreak.dlcalculator:id/2131296754")
+        public WebElement res;
+
+
+    }

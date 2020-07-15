@@ -1,0 +1,18 @@
+package com.sample.tests;
+
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.Test;
+
+import com.sample.pages.Calculator;
+
+public class LoginTests 
+{
+    
+    @Test
+    public void testCalFun() 
+    {
+    	Calculator calculatorobj = new Calculator();   	
+    	assertEquals(calculatorobj.validatecalcFunctionality(), "20");   	
+    }
+}

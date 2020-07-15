@@ -1,0 +1,58 @@
+package com.sample.core;
+
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+
+public class CalculatorTest {
+
+	static AppiumDriver<MobileElement> driver;
+	public static void main(String[] args) 
+	{
+		try 
+		{
+			OpenCalc();
+			
+		} catch (Exception e) 
+		{
+			System.out.println(e.getCause());
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void OpenCalc() throws Exception
+	{
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setCapability("deviceName", "emulator-5554");
+		//cap.setCapability("udid", "758280c3");
+		cap.setCapability("platformName", "android");
+		cap.setCapability("platformVersion", "10");
+		cap.setCapability("appPackage", "com.dencreak.dlcalculator");
+		cap.setCapability("appActivity", "com.dencreak.dlcalculator.DLCalculatorActivity");
+		cap.setCapability("noReset", true);
+		URL url = new URL("http://127.0.0.1:4723/wd/hub");
+		driver = new AppiumDriver<MobileElement>(url,cap);
+		System.out.println("Application Started......");
+		
+		MobileElement elm1 = driver.findElement(By.id("com.dencreak.dlcalculator:id/2131297056"));
+		MobileElement Mul = driver.findElement(By.id("com.dencreak.dlcalculator:id/2131297074"));
+		MobileElement elm2 = driver.findElement(By.id("com.dencreak.dlcalculator:id/2131297055"));
+		MobileElement equal = driver.findElement(By.id("com.dencreak.dlcalculator:id/2131297086"));
+		MobileElement res = driver.findElement(By.id("com.dencreak.dlcalculator:id/2131296754"));
+		
+		elm1.click();
+		Mul.click();
+		elm2.click();
+		equal.click();
+		
+		String finalresult = res.getText();
+		System.out.println("\nThe Final result is: "+finalresult);
+		
+	}
+
+}

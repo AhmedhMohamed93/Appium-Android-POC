@@ -1,0 +1,16 @@
+package com.sample.tests;
+
+import org.testng.annotations.Test;
+import com.sample.pages.CalendarPage;
+
+
+public class LoginTests 
+{
+    
+    @Test
+    public void testCalFun() 
+    {
+    	CalendarPage calculatorobj = new CalendarPage();   	
+    	calculatorobj.validatecalcFunctionality();   	
+    }
+}
