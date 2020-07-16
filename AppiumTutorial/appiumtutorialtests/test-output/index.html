@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Calendar_Functionality">
-              <span class="suite-name border-failed">Calendar Functionality</span>
+              <span class="suite-name border-passed">Calendar Functionality</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Calendar_Functionality" class="hide-methods failed suite-Calendar_Functionality"> (hide)</a> <!-- hide-methods failed suite-Calendar_Functionality -->
-                      <a href="#" panel-name="suite-Calendar_Functionality" class="show-methods failed suite-Calendar_Functionality"> (show)</a> <!-- show-methods failed suite-Calendar_Functionality -->
-                    </span>
-                    <div class="method-list-content failed suite-Calendar_Functionality">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Calendar_Functionality" title="com.sample.tests.CalendarTests" hash-for-method="testCountOfEvents">testCountOfEvents</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Calendar_Functionality -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -126,6 +112,11 @@
                         <a href="#" class="method navigator-link" panel-name="suite-Calendar_Functionality" title="com.sample.tests.CalendarTests" hash-for-method="testCalRemainder">testCalRemainder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Calendar_Functionality" title="com.sample.tests.CalendarTests" hash-for-method="testCountOfEvents">testCountOfEvents</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Calendar_Functionality -->
                   </li>
                 </ul>
@@ -138,26 +129,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Calendar_Functionality" class="panel Calendar_Functionality">
-          <div class="suite-Calendar_Functionality-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.sample.tests.CalendarTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCountOfEvents">
-                  </a> <!-- testCountOfEvents -->
-                  <span class="method-name">testCountOfEvents</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [1] but found [2]
-	at com.sample.tests.CalendarTests.testCountOfEvents(CalendarTests.java:36)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Calendar_Functionality-class-failed -->
           <div class="suite-Calendar_Functionality-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -178,6 +149,13 @@
                   <span class="method-name">testCalRemainder</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCountOfEvents">
+                  </a> <!-- testCountOfEvents -->
+                  <span class="method-name">testCountOfEvents</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Calendar_Functionality-class-passed -->
         </div> <!-- panel Calendar_Functionality -->
@@ -190,7 +168,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Calendar Functionality&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test1&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Scenario 1 [Create an event --&amp;gt; chech details of the created event --&amp;gt; chech count of events]&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.sample.tests.CalendarTests&quot;&gt;
         &lt;methods&gt;
@@ -200,7 +178,7 @@
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.sample.tests.CalendarTests --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test1 --&gt;
+  &lt;/test&gt; &lt;!-- Scenario 1 [Create an event -&gt; chech details of the created event -&gt; chech count of events] --&gt;
 &lt;/suite&gt; &lt;!-- Calendar Functionality --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -212,7 +190,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test1 (1 class)</span>
+                <span class="test-name">Scenario 1 [Create an event --> chech details of the created event --> chech count of events] (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -242,20 +220,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testCalFun')
 data.setCell(0, 2, 'com.sample.tests.CalendarTests')
-data.setCell(0, 3, 32441);
+data.setCell(0, 3, 20569);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testCalRemainder')
+data.setCell(1, 1, 'testCountOfEvents')
 data.setCell(1, 2, 'com.sample.tests.CalendarTests')
-data.setCell(1, 3, 20030);
+data.setCell(1, 3, 6275);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testCountOfEvents')
+data.setCell(2, 1, 'testCalRemainder')
 data.setCell(2, 2, 'com.sample.tests.CalendarTests')
-data.setCell(2, 3, 18241);
+data.setCell(2, 3, 1019);
 window.suiteTableData['Calendar_Functionality']= { tableData: data, tableDiv: 'times-div-Calendar_Functionality'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 27 seconds</span>
               <div id="times-div-Calendar_Functionality">
               </div> <!-- times-div-Calendar_Functionality -->
             </div> <!-- times-div -->
@@ -288,13 +266,11 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCalRemainder</span>
-                <span class="method-start">32503 ms</span>
+                <span class="method-start">20651 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testCountOfEvents</span>
-                <span class="method-start">52539 ms</span>
+                <span class="method-start">21674 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -5,7 +5,7 @@
     <classes>
       <class name="com.sample.tests.CalendarTests">
         <methods>
-          <include name="testCalFun"/>
+          <include name="testCountOfEvents"/>
         </methods>
       </class> <!-- com.sample.tests.CalendarTests -->
     </classes>

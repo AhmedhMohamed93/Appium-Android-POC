@@ -1,0 +1,1 @@
+{"uuid":"4a8c3c2b-7067-4623-bbc1-a0abff5b146f","name":"Scenario 1 [Create an event --> chech details of the created event --> chech count of events]","children":["282f0158-3fb4-43ec-aa05-7f713486dda9","13050814-ec1c-4ca2-ad4c-bce4ea7e7883","38b4ab65-298d-4c68-a44c-5115487f8c9d"],"befores":[],"afters":[],"links":[],"start":1594887979646,"stop":1594888064484}

@@ -68,32 +68,37 @@ public class CalendarPage extends Driver
         CalendarPageObj.SaveEvent.click(); 
         wait.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EventDetails));       
         EventName = CalendarPageObj.EventDetailsName.getText();
+        screenshot();
+    	ScreenshotSetup();
+
         return EventName;             
     }
     
     public String remainder()
     {
-    	WebDriverWait wait   = new WebDriverWait(driver,30);
-    	wait.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EventD));
-    	CalendarPageObj.EventD.click();
-    	CalendarPageObj.MenueE.click();
-    	wait.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EventBTN));
-    	CalendarPageObj.EventBTN.click();    	
+    	WebDriverWait wait   = new WebDriverWait(driver,30);	
     	wait.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.EventRemainder));
+    	screenshot();
+    	ScreenshotSetup();
+
     	return CalendarPageObj.EventRemainder.getText();    	
     }
     
-    public String CountOfEvents()
+    public String CountOfEvents() throws InterruptedException
     {
-    	WebDriverWait wait = new WebDriverWait(driver, 30);
+    	WebDriverWait wait = new WebDriverWait(driver, 30);   	
     	String CountTest;
-    	wait.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.Options));
+    	CalendarPageObj.BackBTN.click();
+    	//Thread.sleep(5000);
+    	wait.until(ExpectedConditions.visibilityOf(CalendarPageObj.MenueE));
     	CalendarPageObj.Options.click();
     	wait.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.Summary));
     	CalendarPageObj.Summary.click();
     	wait.until(ExpectedConditions.elementToBeClickable(CalendarPageObj.CountOfEvent));
     	CountTest = CalendarPageObj.CountOfEvent.getText();
     	CountTest = CountTest.substring(CountTest.indexOf(":") + 2);
+    	screenshot();
+    	ScreenshotSetup();
     	return CountTest.trim();
     	
     	
@@ -173,9 +178,8 @@ public class CalendarPage extends Driver
         @FindBy(id = "com.droidfoundry.calendar:id/tv_event")
         public WebElement CountOfEvent;
         
-        
-
-
+        @FindBy(xpath = "//android.widget.ImageButton[@content-desc=\"Navigate up\"]")
+        public WebElement BackBTN;
     }
     
 }

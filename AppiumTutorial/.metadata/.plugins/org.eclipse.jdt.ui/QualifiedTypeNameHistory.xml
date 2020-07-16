@@ -41,4 +41,10 @@
 <fullyQualifiedTypeName name="com.aventstack.extentreports.ExtentTest"/>
 <fullyQualifiedTypeName name="com.aventstack.extentreports.Status"/>
 <fullyQualifiedTypeName name="com.sample.core.BaseSetup"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="io.qameta.allure.Allure"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.TakesScreenshot"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.OutputType"/>
+<fullyQualifiedTypeName name="io.qameta.allure.Attachment"/>
 </qualifiedTypeNameHistroy>

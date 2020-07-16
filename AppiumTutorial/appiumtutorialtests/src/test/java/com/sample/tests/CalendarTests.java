@@ -10,11 +10,12 @@ import com.sample.pages.CalendarPage;
 
 public class CalendarTests 
 {
-    
+	CalendarPage calculatorobj = new CalendarPage();
+
     @Test
     public void testCalFun() 
     {    			
-    	CalendarPage calculatorobj = new CalendarPage();
+    	//CalendarPage calculatorobj = new CalendarPage();
     	Constants ConstObj = new Constants();
     	assertEquals(calculatorobj.validatecalcFunctionality(), ConstObj.EventName); 
     }
@@ -22,16 +23,16 @@ public class CalendarTests
     @Test
     public void testCalRemainder() 
     {
-    	CalendarPage calculatorobj = new CalendarPage();
+    	//CalendarPage calculatorobj = new CalendarPage();
     	Constants ConstObj = new Constants();
     	assertEquals(calculatorobj.remainder(), ConstObj.EventRemainder);  
     }
     
     
     @Test
-    public void testCountOfEvents() 
+    public void testCountOfEvents() throws InterruptedException 
     {
-    	CalendarPage calculatorobj = new CalendarPage();
+    	//CalendarPage calculatorobj = new CalendarPage();
     	Constants ConstObj = new Constants();
     	assertEquals(calculatorobj.CountOfEvents(), ConstObj.CountofE); 
     }
